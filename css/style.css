@@ -1,0 +1,462 @@
+/* 
+General
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: monospace;
+}
+
+body {
+ 
+        background-color: #030303;
+}
+
+
+
+
+
+
+/* 
+Nav
+ */
+
+nav{
+ position: relative;
+     z-index: 999;
+         width: 100%;
+           color: white !important;
+}
+.navbar {
+
+  
+    margin-top: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 4%;
+   
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    top: 0;
+
+
+       
+}
+
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+        color: white !important;
+        font-size: 20px;
+}
+
+.nav-link {
+     color: white !important;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* القائمة الثانوية */
+.sub-nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 10px 0;
+}
+
+.sub-nav a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+/*  
+Header
+*/
+
+.Header {
+   
+    height: 100vh;
+    background-image: url(../img/back1.jpg);
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    background-size: 100% 130%;
+
+    background-size: cover;
+    /* background-position: center bottom; */
+    background-repeat: no-repeat;
+    height: 95vh;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    /* /* -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%); */
+}
+
+
+
+
+
+
+
+/*  */
+/*  */
+
+.section {
+    position: relative; /* ضروري ليعرف الـ div حدود توسيطه */
+    height: 100vh;      /* طول القسم ليظهر التوسيط العمودي */
+    /* text-align: center;  */
+    padding: 20px;
+}
+
+
+.min-section{
+  max-width: 50%;
+   width: 50%;
+      place-self: anchor-center;
+}
+.section-title{
+      padding: 30px 0px;
+ color: white;
+    position: relative; 
+    z-index: 2; /* لضمان ظهور العنوان فوق أي عناصر أخرى */
+
+}
+.center-div {
+ 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; /* سيقوم بتوزيع المساحات الفارغة بالتساوي في كل الاتجاهات */
+    
+    display: flex; /* فقط لتوسيط النص داخل الـ div الصغير نفسه */
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* 
+Product
+ */
+
+.products-container {
+    display: grid;
+    /* هذا السطر يوزع 4 أعمدة بالتساوي */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 30px; /* المسافة بين الكروت */
+    /* padding: 40px 5%; */
+
+        /* width: 90%;
+    justify-self: center; */
+}
+
+/* تصميم الكارت */
+.product-card {
+    position: relative; /* ضروري عشان الكلام يثبت فوق الصورة */
+    height: 350px; /* ارتفاع الكارت */
+    overflow: hidden;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.4s;
+    text-align: -webkit-left;
+        background-color: #f3f2ef;
+}
+
+/* الصورة كخلفية */
+.product-bg {
+    width: 100%;
+    height: 75%;
+    object-fit: cover; /* تخلي الصورة تملأ الكارت */
+    transition: transform 0.6s ease;
+}
+
+/* الطبقة السوداء الشفافة فوق الصورة عشان النص يوضح */
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #d2c8b9 10%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* ينزل النص للأسفل */
+    padding: 25px;
+    text-align: center;
+    text-align: -webkit-left;
+}
+
+/* تنسيق النصوص */
+.text-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    color: #2e2c2c;
+}
+
+.text-content p {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    color: #2e2c2c;
+    font-weight: 500;
+}
+
+.btn-discover{
+      border: 1px solid #a38468;
+    padding: 5px 10px;
+    color: #a38468;
+    text-decoration-line: none;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+/* --- التجاوب مع مقاسات الشاشات (Responsive) --- */
+
+@media (max-width: 1024px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr); /* في التابلت تظهر صورتين في الصف */
+    }
+}
+
+@media (max-width: 600px) {
+    .products-container {
+        grid-template-columns: 1fr; /* في الجوال تظهر صورة واحدة كاملة العرض */
+    }
+    .product-card {
+        height: 350px;
+    }
+}
+
+/* تأثير عند تمرير الماوس */
+.product-card:hover .product-bg {
+    transform: scale(1.1); /* زووم خفيف للصورة */
+}
+
+
+
+
+/* 
+Footer 
+*/
+
+footer {
+  padding-top: 3vh;
+     background-color: transparent;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+    /* position: fixed; */
+    width: 100%;
+    margin: 20px 0px;
+        position: relative;
+}
+
+
+
+
+
+/*
+Form 
+*/
+
+form{
+        width: 100%;
+}
+.form-row {
+    display: flex;
+    /* gap: 20px; المسافة بين الحقلين */
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* تنسيق كل مجموعة (Input + Label) */
+.form-group {
+    flex: 1; /* تجعل الحقلين يتوزعان بالتساوي 50% لكل منهما */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+ label {
+   margin-bottom: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+}
+input , textarea , select{
+    display: block;
+    padding: 12px 14px;
+    border-radius: 0;
+    border: 1px solid white;
+   
+    line-height: normal;
+    resize: none;
+    transition: border-color .1s ease-in-out;
+    background: #d5d0d06e;
+}
+
+/* تنسيق مربعات الاختيار (الاشتراك) */
+.checkbox-wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.checkbox-item input {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-item label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.form-button{
+
+    background-color: white;
+    padding: 10px 20px;
+    color: black;
+    width: -webkit-fill-available;
+}
+.form-link{
+   background-color: #f39e9e;
+    padding: 10px 20px;
+    color: black;
+    width: -webkit-fill-available;
+    text-decoration: none;
+}
+
+
+
+
+/* Media Query for Responsive Layout */
+@media (min-width: 768px) {
+  .section2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+}
+
+
+/* 
+error
+ */
+#error{
+      background-color: #ff000078;
+    padding: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+
+
+/*  */
+/* 
+.contact-info,
+.contact-form,
+.map {
+  margin-bottom: 50px;
+}
+
+.contact-form form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form form input[type="text"],
+.contact-form form input[type="email"],
+.contact-form form textarea {
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.contact-form form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+} */
+
+
+
+
+/* 
+
+product page
+*/
+/* 
+table td {
+    padding: 0;
+    border: none;
+    margin: 0px;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+} */
+
+
+
+
+
+
+/*  */
+#customer-reviews {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.review-box {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.review-box h3 {
+  margin-top: 0;
+}
+
+.review-box p {
+  margin-bottom: 0;
+}
+
+
